@@ -15,7 +15,7 @@ const openOrSenior = data => {
 };
 
 //or
-const openOrSenior = data => {
+const openOrSenior1 = data => {
   //Array Distructuring
   return data.map(([age, handicap]) => (age > 54 && handicap > 7) ? "Senior" : "Open")
 };
@@ -38,3 +38,46 @@ const sumTwoSmallestNumers = (numbers) => {
   //number.sort((a, b) => b - a);
   console.log(numbers);
 };
+
+//6KYU REPLACE WITH ALPHABET POSITION
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+const alphabetPosition = (text) => {
+  //The sunset sets at twelve o' clock.
+  alphabet.indexOf()
+  return text
+    .toLowerCase()
+    .replace(/[^a-zA-Z]]/g, '')
+    .split('')
+    .map((letter) => alphabetPosition.indexOf(letter + 1))
+    .join(' ');
+};
+
+const alphabetPosition2 = text => {
+  return text
+    .toUpperCase()
+    .replace(/[^A-Z]/g, '')
+    .split('')
+    .map(ch => ch.charCodeAt(0) - 64)
+    .join(' ');
+}
+alphabetPosition("The sunset sets at twelve o'clock.");
+
+// VOWEL COUNT
+function getCount(str) {
+  let vowelCount = 0;
+
+  for (const letter of str) {
+    if (letter.match(/[aeiou]/g)) {
+      ++vowelCount;
+    }
+  }
+
+  return vowelCount;
+}
+
+const getCountV2 = str => {
+  return str.split('').reduce((acc, ltr) => ltr.match(/[aeiou]/g) ? ++acc : acc, 0);
+};
+
+const getCountV3 = str => str.match(/[aeiou]/gi || []).length;
